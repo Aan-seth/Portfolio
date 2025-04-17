@@ -66,7 +66,7 @@ export default function ProjectsSection() {
         <div className="relative group">
           <div
             ref={scrollRef}
-            className="flex overflow-hidden space-x-8 scroll-smooth"
+            className="flex overflow-x-auto space-x-6 scroll-smooth scrollbar-hide"
             style={{ scrollBehavior: 'smooth' }}
           >
             {projects.map((project, index) => (
@@ -76,16 +76,18 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_6px_rgba(236,72,153,0.35)]"
+                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden max-h-[400px] transform transition duration-300 hover:scale-105 hover:shadow-[0_0_20px_6px_rgba(236,72,153,0.35)]"
               >
-                <div className="p-8"> {/* Increased padding here from p-6 to p-8 */}
-                  <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                <div className="p-6 sm:p-8 h-full flex flex-col justify-between">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                    {project.description}
+                  </p>
                   <a
                     href={project.link}
-                    className="inline-block text-pink-600 dark:text-pink-400 font-semibold border-b-2 border-transparent hover:border-pink-600 dark:hover:border-pink-400 transition-all"
+                    className="inline-block text-pink-600 dark:text-pink-400 font-semibold border-b-2 border-transparent hover:border-pink-600 dark:hover:border-pink-400 transition"
                   >
                     View Project
                   </a>

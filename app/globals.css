@@ -18,3 +18,19 @@
     --foreground: #ededed;
   }
 }
+/* globals.css */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent Contact going out on small screen */
+}
+/* Optional: Hide scrollbars for a cleaner look */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -6,7 +6,8 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <section className="px-6 py-32 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-16">
+
         {/* LEFT - Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -15,11 +16,11 @@ export default function HeroSection() {
           viewport={{ once: true }}
           className="text-center md:text-left md:w-1/2"
         >
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Hi, I'm Aanchal 👋
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            A full-stack web developer crafting sleek, responsive UIs and blending tech with creativity. 
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6">
+            A full-stack web developer crafting sleek, responsive UIs and blending tech with creativity.
             Currently exploring AI tools to build intelligent, beautiful products.
           </p>
           <div className="flex justify-center md:justify-start gap-4">
@@ -47,20 +48,20 @@ export default function HeroSection() {
           className="relative w-full md:w-1/2 flex justify-center items-center"
         >
           {/* Soft Gradient Background */}
-          <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-pink-400 via-fuchsia-500 to-purple-600 blur-[120px] opacity-30 z-0" />
+          <div className="absolute w-[300px] sm:w-[350px] md:w-[400px] h-[300px] sm:h-[350px] md:h-[400px] rounded-full bg-gradient-to-tr from-pink-400 via-fuchsia-500 to-purple-600 blur-[120px] opacity-30 z-0" />
 
           {/* Floating Blobs */}
-          <div className="absolute top-[-60px] right-[-60px] w-28 h-28 bg-pink-500/40 rounded-full blur-3xl z-0 animate-pulse" />
-          <div className="absolute bottom-[-60px] left-[-40px] w-24 h-24 bg-purple-500/40 rounded-full blur-3xl z-0 animate-pulse" />
+          <div className="absolute top-[-60px] right-[-60px] w-20 h-20 sm:w-28 sm:h-28 bg-pink-500/40 rounded-full blur-3xl z-0 animate-pulse" />
+          <div className="absolute bottom-[-60px] left-[-40px] w-20 h-20 sm:w-24 sm:h-24 bg-purple-500/40 rounded-full blur-3xl z-0 animate-pulse" />
 
           {/* Glassy Card */}
-          <div className="relative z-10 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl p-3">
+          <div className="relative z-10 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl p-3 w-48 h-48 sm:w-64 sm:h-64 md:w-auto md:h-auto">
             <Image
               src="/Profile_pic.png"
               alt="Aanchal Hero"
               width={380}
               height={380}
-              className="rounded-2xl object-cover"
+              className="rounded-2xl object-cover w-full h-full"
             />
           </div>
         </motion.div>
