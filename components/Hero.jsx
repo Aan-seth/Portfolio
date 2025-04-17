@@ -48,20 +48,26 @@ export default function HeroSection() {
           className="relative w-full md:w-1/2 flex justify-center items-center"
         >
           {/* Soft Gradient Background */}
-          <div className="absolute w-[300px] sm:w-[350px] md:w-[400px] h-[300px] sm:h-[350px] md:h-[400px] rounded-full bg-gradient-to-tr from-pink-400 via-fuchsia-500 to-purple-600 blur-[120px] opacity-30 z-0" />
+          <div className="absolute w-[300px] sm:w-[350px] md:w-[400px] h-[300px] sm:h-[350px] md:h-[400px] rounded-full bg-gradient-to-tr from-pink-400 via-fuchsia-500 to-purple-600 blur-[100px] opacity-20 z-0" />
 
           {/* Floating Blobs */}
-          <div className="absolute top-[-60px] right-[-60px] w-20 h-20 sm:w-28 sm:h-28 bg-pink-500/40 rounded-full blur-3xl z-0 animate-pulse" />
-          <div className="absolute bottom-[-60px] left-[-40px] w-20 h-20 sm:w-24 sm:h-24 bg-purple-500/40 rounded-full blur-3xl z-0 animate-pulse" />
+          <div className="absolute top-[-60px] right-[-60px] w-20 h-20 sm:w-28 sm:h-28 bg-pink-500/30 rounded-full blur-3xl z-0 animate-pulse" />
+          <div className="absolute bottom-[-60px] left-[-40px] w-20 h-20 sm:w-24 sm:h-24 bg-purple-500/30 rounded-full blur-3xl z-0 animate-pulse" />
 
-          {/* Glassy Card */}
-          <div className="relative z-10 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl p-3 w-48 h-48 sm:w-64 sm:h-64 md:w-auto md:h-auto">
+          <div className="absolute w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full z-0 ring-[3px] ring-white/40 blur-[2px]" />
+
+          {/* Blended Image Card with White Glowing Ring */}
+          <div className="relative z-10 rounded-full overflow-hidden w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 shadow-xl border border-white/20 bg-white/10 backdrop-blur-md hover:scale-105 transform transition-all">
+            {/* Image Container with Glowing Ring Effect */}
+            <div className="absolute inset-0 flex justify-center items-center">
+              <div className="w-full h-full absolute rounded-full border-2 border-white/50 blur-[2px] animate-pulse ring-glow" />
+            </div>
             <Image
               src="/Profile_pic.png"
               alt="Aanchal Hero"
               width={380}
               height={380}
-              className="rounded-2xl object-cover w-full h-full"
+              className="w-full h-full object-cover rounded-full mix-blend-soft-light  transition-all hover:rotate-3"
             />
           </div>
         </motion.div>
