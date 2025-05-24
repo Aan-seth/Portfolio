@@ -1,6 +1,5 @@
-// components/Contact.jsx
 'use client';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -8,21 +7,44 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export default function Contact() {
   const formRef = useRef();
   const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    title: '',
+    message: ''
+  });
+
+  useEffect(() => {
+    console.log('Service ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+    console.log('Template ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+    console.log('Public Key:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      'service_0ro06td',
-      'template_aatdo1a',
-      formRef.current,
-      '8wscUpsRri4p_Rwwk'
-    ).then(() => {
-      setMessage('Message sent successfully!');
-      formRef.current.reset();
-    }).catch(() => {
-      setMessage('Failed to send message. Please try again later.');
-    });
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setMessage('✅ Message sent successfully!');
+        setFormData({ name: '', email: '', title: '', message: '' });
+        formRef.current.reset();
+      })
+      .catch(() => {
+        setMessage('❌ Failed to send message. Please try again later.');
+      });
   };
 
   return (
@@ -48,25 +70,41 @@ export default function Contact() {
       <form ref={formRef} onSubmit={sendEmail} className="max-w-md mx-auto space-y-4">
         <input
           type="text"
-          name="user_name"
+          name="name"
           placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
           required
           className="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 dark:text-white"
         />
         <input
           type="email"
-          name="user_email"
+          name="email"
           placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 dark:text-white"
+        />
+        <input
+          type="text"
+          name="title"
+          placeholder="Subject"
+          value={formData.title}
+          onChange={handleChange}
           required
           className="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 dark:text-white"
         />
         <textarea
           name="message"
           placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
           required
           rows="5"
           className="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 dark:text-white"
         ></textarea>
+
         <button
           type="submit"
           className="w-full py-3 bg-pink-600 text-white rounded hover:bg-pink-700 transition"
