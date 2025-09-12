@@ -7,23 +7,34 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "Try Spotify – Music Streaming UI Clone",
-      description: "A modern and responsive Spotify-inspired music player UI built with Next.js and Tailwind CSS. It mimics core Spotify features like sidebar navigation, album artwork, and playlist layout with a sleek dark theme. Deployed seamlessly with Vercel.",
+      description: "A modern and responsive Spotify-inspired music player UI built with Next.js and Tailwind CSS. Deployed seamlessly with Vercel.",
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       liveLink: "https://try-spotify.vercel.app/",
       githubLink: "https://github.com/Aan-seth/Try_Spotify",
       image: "/Try-spotify.png"
     },
+
     {
-      title: "Show Me Weather",
-      description: "A sleek and responsive weather web app that shows real-time weather updates using OpenWeatherMap API.",
-      techStack: ["React", "Tailwind CSS", "OpenWeatherMap API", "Vercel"],
-      liveLink: "https://show-me-weather.vercel.app/",
-      githubLink: "https://github.com/Aan-seth/Show-me-weather",
-      image: "/Weather app.jpg"
+      title: "AI Image Studio",
+      description: "An advanced AI-powered image generation web app that lets users create stunning visuals from text prompts.",
+      techStack: ["React", "Tailwind CSS", "Framer Motion", "EmailJS", "Vercel"],
+      liveLink: "https://ai-image-generator-phi-vert.vercel.app/",
+      githubLink: "https://github.com/Aan-seth/Ai-Image-Generator",
+      image: "/AI-studio.jpg"
     },
     {
+      title: "Simon Game – Interactive Memory Challenge",
+      description: "A fun and interactive browser-based memory game ,this project sharpens memory and attention.",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      liveLink: "https://simon-game-lemon-eta.vercel.app/",
+      githubLink: "https://github.com/Aan-seth/Simon-Game",
+      image: "/simon.jpg"
+    },
+
+
+    {
       title: "AI Shell Agent – Terminal Command Assistant",
-      description: "A command-line AI assistant powered by Mistral-7B-Instruct via Hugging Face. This tool intelligently interprets user goals and generates optimized shell commands. It avoids redundant installs, filters unsafe suggestions, and supports direct execution with user confirmation. Designed to enhance productivity for developers working in terminal environments.",
+      description: "AI assistant tool intelligently interprets user goals and generates optimized shell commands.",
       techStack: ["Python", "Transformers", "Hugging Face", "Mistral-7B", "Shell"],
       liveLink: "https://drive.google.com/file/d/1G00k6OksyepIjtExjkmPHSa5-_LFHxmx/view?usp=drivesdk",
       githubLink: "https://github.com/Aan-seth/Ai_agent",
@@ -35,7 +46,24 @@ export default function ProjectsSection() {
       techStack: ["React", "Tailwind CSS", "Vercel"],
       liveLink: "https://password-generator-xi-ashen-91.vercel.app/",
       githubLink: "https://github.com/Aan-seth/Password_Generator",
-      image: "/password generator.jpg" // make sure to add a screenshot at public/images/password-generator.png
+      image: "/Password.jpg"
+    },
+    {
+      title: "Enquiry Form Portal",
+      description: "A modern and responsive enquiry form web app where users can submit, edit, and manage enquiries. Includes flash messages, validation, and a responsive table for viewing all submissions.",
+      techStack: ["React", "React Router", "CSS", "Vite", "Vercel"],
+      liveLink: "https://enquiry-form-ten.vercel.app/",
+      githubLink: "https://github.com/Aan-seth/Enquiry-Form",
+      image: "/Enquiry form.jpg"
+    },
+
+    {
+      title: "Show Me Weather",
+      description: "A sleek and responsive weather web app that shows real-time weather updates using OpenWeatherMap API.",
+      techStack: ["React", "Tailwind CSS", "OpenWeatherMap API", "Vercel"],
+      liveLink: "https://show-me-weather.vercel.app/",
+      githubLink: "https://github.com/Aan-seth/Show-me-weather",
+      image: "/Weather app.jpg"
     }
     ,
   ];
@@ -114,7 +142,7 @@ export default function ProjectsSection() {
                           rel="noopener noreferrer"
                           className="text-pink-600 dark:text-pink-400 font-medium border-b border-transparent hover:border-pink-500 transition"
                         >
-                         Demo →
+                          Demo →
                         </a>
                       )}
                       {project.githubLink && (
